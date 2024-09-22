@@ -1,10 +1,11 @@
 package br.insper.Simulado.jogador;
 
 import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
-@Entity
+@Document
 public class Jogador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
