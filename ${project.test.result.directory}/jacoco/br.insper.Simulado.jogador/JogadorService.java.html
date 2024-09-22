@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JogadorService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Simulado</a> &gt; <a href="index.source.html" class="el_package">br.insper.Simulado.jogador</a> &gt; <span class="el_source">JogadorService.java</span></div><h1>JogadorService.java</h1><pre class="source lang-java linenums">package br.insper.Simulado.jogador;
+
+import br.insper.Simulado.time.Time;
+import br.insper.Simulado.time.TimeNaoEncontradaException;
+import br.insper.Simulado.time.TimeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+<span class="fc" id="L14">public class JogadorService {</span>
+
+    @Autowired JogadorRepository jogadorRepository;
+
+    @Autowired TimeService timeService;
+
+    public Jogador CadastraJogador(Jogador jogador) {
+<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (jogador.getNome().equals(&quot;&quot;)</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">                || jogador.getIdade().equals(&quot;&quot;)){</span>
+<span class="nc" id="L23">            throw  new RuntimeException(&quot;Dados invalidos&quot;);</span>
+        } else {
+<span class="nc" id="L25">            return jogadorRepository.save(jogador);</span>
+        }
+    }
+
+    public List&lt;Jogador&gt; listaJogadores() {
+<span class="fc" id="L30">        return jogadorRepository.findAll();</span>
+    }
+
+    public Jogador addJogador(Integer Idjogador, Integer indentificador) {
+<span class="nc" id="L34">        Jogador jogador = jogadorRepository.findById(Idjogador).get();</span>
+<span class="nc bnc" id="L35" title="All 6 branches missed.">        if (jogador.getNome().equals(&quot;&quot;) || jogador.getIdade().equals(&quot;&quot;) || indentificador.equals(&quot;&quot;)){</span>
+<span class="nc" id="L36">            throw  new RuntimeException(&quot;Dados invalidos&quot;);</span>
+        }
+<span class="nc" id="L38">        ResponseEntity&lt;Time&gt; time = timeService.getTime(indentificador);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if(time.getStatusCode().is2xxSuccessful()){</span>
+<span class="nc" id="L40">            ArrayList&lt;String&gt; times = jogador.getTimes();</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            if(time.getBody().getNome() != null){</span>
+<span class="nc" id="L42">                times.add(time.getBody().getNome());</span>
+<span class="nc" id="L43">                jogador.setTimes(times);</span>
+<span class="nc" id="L44">                return jogadorRepository.save(jogador);</span>
+            }
+            else {
+<span class="nc" id="L47">                throw new TimeNaoEncontradaException(&quot;Time &quot; + indentificador + &quot; não tem nome&quot;);</span>
+            }
+
+        }else{
+<span class="nc" id="L51">            throw new TimeNaoEncontradaException(&quot;Time &quot; + indentificador + &quot; não encontrado&quot;);</span>
+        }
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

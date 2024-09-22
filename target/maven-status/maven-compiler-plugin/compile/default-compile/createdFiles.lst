@@ -1,0 +1,9 @@
+br\insper\Simulado\jogador\JogadorController.class
+br\insper\Simulado\jogador\Jogador.class
+br\insper\Simulado\SimuladoApplication.class
+br\insper\Simulado\jogador\JogadorRepository.class
+br\insper\Simulado\time\TimeNaoEncontradaException.class
+br\insper\Simulado\time\Time.class
+br\insper\Simulado\jogador\JogadorService.class
+br\insper\Simulado\time\TimeService.class
+br\insper\Simulado\common\Erro.class

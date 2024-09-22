@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Time.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Simulado</a> &gt; <a href="index.source.html" class="el_package">br.insper.Simulado.time</a> &gt; <span class="el_source">Time.java</span></div><h1>Time.java</h1><pre class="source lang-java linenums">package br.insper.Simulado.time;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Time {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(nullable = false)
+    private String nome;
+    @Column(unique = true)
+    private String identificador;
+    private String estadio;
+    private String estado;
+
+<span class="fc" id="L17">    public Time() {</span>
+<span class="fc" id="L18">    }</span>
+
+<span class="nc" id="L20">    public Time(String nome, String identificador, String estadio, String estado) {</span>
+<span class="nc" id="L21">        this.nome = nome;</span>
+<span class="nc" id="L22">        this.identificador = identificador;</span>
+<span class="nc" id="L23">        this.estadio = estadio;</span>
+<span class="nc" id="L24">        this.estado = estado;</span>
+<span class="nc" id="L25">    }</span>
+
+    public Integer getId() {
+<span class="nc" id="L28">        return id;</span>
+    }
+
+    public void setId(Integer id) {
+<span class="fc" id="L32">        this.id = id;</span>
+<span class="fc" id="L33">    }</span>
+
+    public String getNome() {
+<span class="fc" id="L36">        return nome;</span>
+    }
+
+    public void setNome(String nome) {
+<span class="fc" id="L40">        this.nome = nome;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String getIdentificador() {
+<span class="nc" id="L44">        return identificador;</span>
+    }
+
+    public void setIdentificador(String identificador) {
+<span class="nc" id="L48">        this.identificador = identificador;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getEstadio() {
+<span class="nc" id="L52">        return estadio;</span>
+    }
+
+    public void setEstadio(String estadio) {
+<span class="nc" id="L56">        this.estadio = estadio;</span>
+<span class="nc" id="L57">    }</span>
+
+    public String getEstado() {
+<span class="nc" id="L60">        return estado;</span>
+    }
+
+    public void setEstado(String estado) {
+<span class="nc" id="L64">        this.estado = estado;</span>
+<span class="nc" id="L65">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
