@@ -8,7 +8,6 @@ import java.util.ArrayList;
 @Document
 public class Jogador {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
