@@ -9,7 +9,7 @@ public class TimeService {
     public ResponseEntity<Time> getTime(Integer indentificador) {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForEntity(
-                "http://localhost:8080/time/" + indentificador,
+                "http://campeonato:8080/time/" + indentificador,
                 Time.class);
 
     }
