@@ -57,4 +57,4 @@ jobs:
         script: |
           docker stop simulado
           docker rm --force simulado
-          docker run -d -p 8080:8080 --network=rede --name simulado rafaelaafferri/simulado-ci:${{ github.sha }}
+          docker run -d -p 8082:8082 --network=rede --name simulado rafaelaafferri/simulado-ci:${{ github.sha }}
