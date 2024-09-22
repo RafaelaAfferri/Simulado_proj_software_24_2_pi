@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @Document
 public class Jogador {
     @Id
-    private Integer id;
+    private String id;
 
     @Column(nullable = false)
     private String nome;
