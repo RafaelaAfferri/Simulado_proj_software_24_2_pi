@@ -22,18 +22,18 @@ public class Jogador {
     public Jogador() {
     }
 
-    public Jogador(Integer id, String nome, Integer idade, ArrayList<String> times) {
+    public Jogador(String id, String nome, Integer idade, ArrayList<String> times) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.times = times;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

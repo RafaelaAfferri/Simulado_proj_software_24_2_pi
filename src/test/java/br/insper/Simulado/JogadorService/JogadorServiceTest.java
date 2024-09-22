@@ -117,7 +117,7 @@ public class JogadorServiceTest {
         Jogador jogador = new Jogador();
         jogador.setNome("Antonio");
         jogador.setIdade(20);
-        jogador.setId(1);
+        jogador.setId("id");
 
         Mockito.when(jogadorRepository.findById(1)).thenReturn(java.util.Optional.of(jogador));
 
@@ -142,7 +142,7 @@ public class JogadorServiceTest {
         Jogador jogador = new Jogador();
         jogador.setNome("Antonio");
         jogador.setIdade(20);
-        jogador.setId(1);
+        jogador.setId("id");
 
         Time time = new Time();
 
@@ -163,7 +163,7 @@ public class JogadorServiceTest {
         Jogador jogador = new Jogador();
         jogador.setNome("Antonio");
         jogador.setIdade(20);
-        jogador.setId(1);
+        jogador.setId("id");
 
         Time time = new Time();
         time.setNome(null);
@@ -185,7 +185,7 @@ public class JogadorServiceTest {
         Jogador jogador = new Jogador();
         jogador.setNome("Antonio");
         jogador.setIdade(20);
-        jogador.setId(1);
+        jogador.setId("id");
         ArrayList<String> times = new ArrayList<>();
         times.add("Santos");
         jogador.setTimes(times);
